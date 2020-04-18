@@ -1,40 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 
-// function App() {
-
-//   const [card, setCard] = useState({});
-  
-//   useEffect(() => {
-//       fetch('http://localhost:5000/api/players')
-//       .then(res => res.json())
-//       .then((card) => setCard(card));
-      
-//       // return a clean-up function in order to debug terminal, cannot do setCard on an un-mounted component
-
-//   }, []);
-
-// }
 
 class App extends React.Component {
   // constructor with state
   constructor() {
     super();
     this.state = {
-      card: card
+      // card: card
     };
   }
 
 
   componentDidMount() {
-    fetch("http://localhost:5000/api/players")
+    fetch('http://localhost:5000/api/players')
       .then(res => res.json())
       .then(
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result.items
+            name: result.name
           });
+          console.log("API call", result);
         },
         
         (error) => {
@@ -96,7 +83,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Name</h1>
-        <p className="card-name">{card.name}</p>
+        {/* <p className="card-name">{card.name}</p> */}
       </div>
     );
   }
