@@ -7,3 +7,15 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+
+/**
+test("renders greeting on Greeting component", async () => {
+  // Arrange
+  const { getByText } = render(<Greeting />);
+  // Act
+  const greeting = getByText(/hello lambdalorians!/i);
+  // Assert
+  expect(greeting).toBeInTheDocument();
+});
+
+*/
